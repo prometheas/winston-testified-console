@@ -1,0 +1,38 @@
+{
+  "name": "winston-testified-console",
+  "version": "0.0.1",
+  "description": "Configures Winston’s Console transport to send all log messages to stderr to keep test output clean",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -r test/unit/init.js test/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prometheas/winston-testified-logging.git"
+  },
+  "keywords": [
+    "winston",
+    "test"
+  ],
+  "author": "John Lianoglou <https://github.com/prometheas>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prometheas/winston-testified-logging/issues"
+  },
+  "homepage": "https://github.com/prometheas/winston-testified-logging#readme",
+  "dependencies": {
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "mocha": "^3.2.0"
+  }
+}
