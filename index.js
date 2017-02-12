@@ -43,7 +43,7 @@ function isTestingEnv() {
  * @param  {Function}        [isTesting]  function whose return value indicates
  *                                        whether execution is testing env.
  */
-module.exports = (logger, isTesting = isTestingEnv) => {
+module.exports = (logger = winston, isTesting = isTestingEnv) => {
   const { transports } = logger || winston;
   const levels = Object.keys(logger.levels);
 
