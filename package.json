@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint *.js test/**/*.js",
-    "test": "mocha -r test/unit/init.js test/**/*.spec.js"
+    "test": "mocha test/**/*.spec.js"
   },
   "repository": {
     "type": "git",
