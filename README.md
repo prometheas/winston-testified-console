@@ -66,8 +66,18 @@ bit more work to get set up, so let's take it from the top.
 ### Configuring Testify
 
 The more complex your project is, the likelier you'll need to do a bit of
-configuring, by passing a config object, like so:
+configuring.  The `winston-testified-console` supports two optional arguments:
+
+- `target`, which references _what_ to "testify" console output for.  This can
+  be a `winston.Logger` instance, a `winston.Container` instance, an array of
+  instance of either type (can be uniform or a mix), and the `winston` instance
+  itself (default value).
+
+- `isTesting`, which is a callback that should return `true` whenever console
+  output ought to be "testified".  The default callback evaulates to `true` when
+  the `NODE_ENV` environment variable matches `/^test/` (e.g., `test`, `tests`,
+  `testing`, etc).
 
 ```js
-require('winston-testified-console')(opts);
+require('winston-testified-console')(logger, isTestingCb);
 ```
