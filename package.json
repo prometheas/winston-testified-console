@@ -1,6 +1,6 @@
 {
   "name": "winston-testified-console",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Configures Winston’s Console transport to send all log messages to stderr to keep test output clean",
   "main": "index.js",
   "directories": {
