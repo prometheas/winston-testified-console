@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prometheas/winston-testified-logging.git"
+    "url": "git+https://github.com/prometheas/winston-testified-console.git"
   },
   "keywords": [
     "winston",
@@ -21,9 +21,9 @@
   "author": "John Lianoglou <https://github.com/prometheas>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prometheas/winston-testified-logging/issues"
+    "url": "https://github.com/prometheas/winston-testified-console/issues"
   },
-  "homepage": "https://github.com/prometheas/winston-testified-logging#readme",
+  "homepage": "https://github.com/prometheas/winston-testified-console#readme",
   "dependencies": {
     "winston": "^2.3.1"
   },
@@ -34,7 +34,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "shelljs": "^0.7.6"
   },
   "engines" : {
     "node" : ">=6"
