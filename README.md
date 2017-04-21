@@ -4,6 +4,10 @@ Configures Winston’s Console transport to send all log messages to stderr to
 keep test output clean.
 
 [![Travis CI status](https://travis-ci.org/prometheas/winston-testified-console.svg?branch=master)](https://www.bithound.io/github/prometheas/winston-testified-console)
+[![bitHound Overall Score](https://www.bithound.io/github/prometheas/winston-testified-console/badges/score.svg)](https://www.bithound.io/github/prometheas/winston-testified-console)
+[![bitHound Dependencies](https://www.bithound.io/github/prometheas/winston-testified-console/badges/dependencies.svg)](https://www.bithound.io/github/prometheas/winston-testified-console/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/prometheas/winston-testified-console/badges/devDependencies.svg)](https://www.bithound.io/github/prometheas/winston-testified-console/master/dependencies/npm)
+[![bitHound Code](https://www.bithound.io/github/prometheas/winston-testified-console/badges/code.svg)](https://www.bithound.io/github/prometheas/winston-testified-console)
 
 
 ## Introduction
