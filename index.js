@@ -52,13 +52,19 @@ module.exports = (logger = winston, isTesting = isTestingEnv) => {
   }
 
   if (hasConsoleTransport(logger)) {
-    if (typeof transports.filter(transport => transport instanceof winston.transports.Console)[0].stderrLevels !== 'object') {
+    if (typeof transports
+        .filter(transport => transport instanceof winston.transports.Console)[0]
+        .stderrLevels !== 'object') {
       throw Error('Console transport instance is missing `stderrLevels` property');
     }
 
-    transports.filter(transport => transport instanceof winston.transports.Console)[0].stderrLevels = {};
+    transports
+      .filter(transport => transport instanceof winston.transports.Console)[0]
+      .stderrLevels = {};
     levels.forEach((level) => {
-      transports.filter(transport => transport instanceof winston.transports.Console)[0].stderrLevels[level] = true;
+      transports
+        .filter(transport => transport instanceof winston.transports.Console)[0]
+        .stderrLevels[level] = true;
     });
   }
 };

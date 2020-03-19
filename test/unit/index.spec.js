@@ -25,7 +25,9 @@ describe('#testifyLogger() [unit]', () => {
       testifyLogger(logger, returnTrue);
 
       Object.keys(logger.levels).forEach((level) => {
-        expect(logger.transports.filter(transport => transport instanceof winston.transports.Console)[0].stderrLevels[level]).to.be.true;
+        expect(logger.transports
+          .filter(transport => transport instanceof winston.transports.Console)[0]
+          .stderrLevels[level]).to.be.true;
       });
     });
 
@@ -40,7 +42,9 @@ describe('#testifyLogger() [unit]', () => {
     it('should throw when console transport has no `stderrLevels` property', () => {
       logger.add(new winston.transports.Console());
 
-      delete logger.transports.filter(transport => transport instanceof winston.transports.Console)[0].stderrLevels;
+      delete logger.transports
+        .filter(transport => transport instanceof winston.transports.Console)[0]
+        .stderrLevels;
       expect(() => {
         testifyLogger(logger, returnTrue);
       }).to.throw();
@@ -49,7 +53,9 @@ describe('#testifyLogger() [unit]', () => {
     it('should throw when console transport has a non-object `stderrLevels` property', () => {
       logger.add(new winston.transports.Console());
 
-      logger.transports.filter(transport => transport instanceof winston.transports.Console)[0].stderrLevels = 1;
+      logger.transports
+        .filter(transport => transport instanceof winston.transports.Console)[0]
+        .stderrLevels = 1;
       expect(() => {
         testifyLogger(logger, returnTrue);
       }).to.throw();
