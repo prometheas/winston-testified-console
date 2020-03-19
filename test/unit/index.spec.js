@@ -16,21 +16,21 @@ describe('#testifyLogger() [unit]', () => {
     let logger;
 
     beforeEach(() => {
-      logger = new winston.Logger();
+      logger = winston.createLogger();
     });
 
     it('should add entries for all logger levels to the console transport `stderrLevels` object', () => {
-      logger.add(winston.transports.Console);
+      logger.add(new winston.transports.Console());
 
       testifyLogger(logger, returnTrue);
 
       Object.keys(logger.levels).forEach((level) => {
-        expect(logger.transports.console.stderrLevels[level]).to.be.true;
+        expect(logger.transports.filter(transport => transport instanceof winston.transports.Console)[0].stderrLevels[level]).to.be.true;
       });
     });
 
     it('should not throw when there is no console transport', () => {
-      logger.add(winston.transports.File, { filename: './foo.log' });
+      logger.add(new winston.transports.File({ filename: './foo.log' }));
 
       expect(() => {
         testifyLogger(logger, returnTrue);
@@ -38,18 +38,18 @@ describe('#testifyLogger() [unit]', () => {
     });
 
     it('should throw when console transport has no `stderrLevels` property', () => {
-      logger.add(winston.transports.Console);
+      logger.add(new winston.transports.Console());
 
-      delete logger.transports.console.stderrLevels;
+      delete logger.transports.filter(transport => transport instanceof winston.transports.Console)[0].stderrLevels;
       expect(() => {
         testifyLogger(logger, returnTrue);
       }).to.throw();
     });
 
     it('should throw when console transport has a non-object `stderrLevels` property', () => {
-      logger.add(winston.transports.Console);
+      logger.add(new winston.transports.Console());
 
-      logger.transports.console.stderrLevels = 1;
+      logger.transports.filter(transport => transport instanceof winston.transports.Console)[0].stderrLevels = 1;
       expect(() => {
         testifyLogger(logger, returnTrue);
       }).to.throw();
